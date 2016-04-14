@@ -7,12 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "Foundation/Foundation.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+@synthesize txtName = _txtName;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,5 +27,9 @@
 }
 
 - (IBAction)buttonClick:(id)sender {
-}
+    NSString *sAd = _txtName.text;
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Mesaj" message:sAd delegate:self cancelButtonTitle:@"Tamam" otherButtonTitles:nil, nil];
+    [alertView show];
+ }
 @end
