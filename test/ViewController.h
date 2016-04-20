@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+{
+    NSMutableData *responseData;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UIButton *btnSave;
+@property (weak, nonatomic) IBOutlet UILabel *lblResult;
 - (IBAction)buttonClick:(id)sender;
 
 @end
